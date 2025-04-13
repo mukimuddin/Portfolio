@@ -6,3 +6,6 @@
     "tsparticles": "^3.8.1"
   }
 }
+"scripts": {
+    "build": "your build command here"
+}
