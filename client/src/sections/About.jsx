@@ -4,20 +4,17 @@ import {
   FaCss3Alt, 
   FaJs, 
   FaReact, 
-  FaNodeJs, 
-  FaGitAlt, 
-  FaDocker, 
-  FaAws,
+  FaNodeJs,
   FaDatabase
 } from 'react-icons/fa';
 import { 
-  SiTailwindcss, 
   SiTypescript, 
-  SiMongodb, 
-  SiPostgresql, 
+  SiTailwindcss,
+  SiMongodb,
   SiRedis
 } from 'react-icons/si';
-import { BiCloud } from 'react-icons/bi';
+import { BiLogoPostgresql } from 'react-icons/bi';
+import mukimPhoto from '../assets/images/IMG20250330081513.jpg';
 
 const About = () => {
   const skills = [
@@ -29,179 +26,96 @@ const About = () => {
     { name: 'Tailwind CSS', icon: SiTailwindcss, proficiency: 90 },
     { name: 'Node.js', icon: FaNodeJs, proficiency: 87 },
     { name: 'MongoDB', icon: SiMongodb, proficiency: 85 },
-    { name: 'PostgreSQL', icon: SiPostgresql, proficiency: 82 },
-    { name: 'Redis', icon: SiRedis, proficiency: 80 },
-    { name: 'Git', icon: FaGitAlt, proficiency: 88 },
-    { name: 'Docker', icon: FaDocker, proficiency: 83 },
-    { name: 'AWS', icon: FaAws, proficiency: 80 },
-    { name: 'Cloud Services', icon: BiCloud, proficiency: 75 },
-  ];
-
-  const experiences = [
-    {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Innovators Inc.',
-      period: '2022 - Present',
-      description: 'Leading development of enterprise-scale applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.',
-      achievements: [
-        'Reduced application load time by 40% through optimization',
-        'Implemented microservices architecture',
-        'Led team of 5 developers for major project deliveries'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple web applications using modern JavaScript frameworks and backend technologies.',
-      achievements: [
-        'Built real-time dashboard with WebSocket',
-        'Integrated payment gateway solutions',
-        'Improved test coverage to 85%'
-      ]
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'Creative Web Agency',
-      period: '2018 - 2020',
-      description: 'Specialized in creating responsive and interactive user interfaces using React and related technologies.',
-      achievements: [
-        'Developed 20+ client websites',
-        'Implemented responsive design systems',
-        'Reduced bug reports by 60%'
-      ]
-    }
-  ];
-
-  const education = [
-    {
-      degree: 'Master of Computer Science',
-      institution: 'Tech University',
-      period: '2016 - 2018',
-      description: 'Specialized in Software Engineering and Web Technologies'
-    },
-    {
-      degree: 'Bachelor of Computer Science',
-      institution: 'State University',
-      period: '2012 - 2016',
-      description: 'Major in Computer Science with focus on Programming'
-    }
+    { name: 'PostgreSQL', icon: BiLogoPostgresql, proficiency: 82 },
+    { name: 'Redis', icon: SiRedis, proficiency: 80 }
   ];
 
   return (
-    <section className="section-padding">
-      {/* Introduction */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto mb-20"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">About Me</h1>
-        <p className="text-lg text-text-secondary mb-6">
-          With over 5 years of experience in full-stack development, I specialize in building scalable web applications
-          using modern technologies. My passion lies in creating efficient, maintainable, and user-friendly solutions
-          that solve real-world problems.
-        </p>
-        <p className="text-lg text-text-secondary">
-          I'm constantly learning and adapting to new technologies while maintaining a strong foundation in software
-          development principles. My approach combines technical expertise with creative problem-solving to deliver
-          exceptional results.
-        </p>
-      </motion.div>
-
-      {/* Skills */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-4xl mx-auto mb-20"
-      >
-        <h2 className="text-3xl font-bold mb-8 gradient-text">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {skills.map((skill, index) => (
+    <section id="about" className="py-20 bg-[#0A192F] text-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-4xl font-bold mb-8 text-center text-white">About Me</h2>
+          
+          <div className="flex flex-col md:flex-row gap-12 mb-12">
+            {/* Photo Section */}
             <motion.div
-              key={skill.name}
               initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-secondary/30 backdrop-blur-sm rounded-lg p-4"
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="md:w-1/3 flex justify-center"
             >
-              <div className="flex items-center gap-4 mb-2">
-                <skill.icon className="text-2xl text-accent" />
-                <h3 className="text-lg font-medium text-text-primary">{skill.name}</h3>
-              </div>
-              <div className="w-full bg-primary/50 rounded-full h-2.5">
-                <div
-                  className="bg-accent h-2.5 rounded-full transition-all duration-1000"
-                  style={{ width: `${skill.proficiency}%` }}
+              <div className="relative w-64 h-64 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(78,238,177,0.3)] border-2 border-[#4EEEB1]">
+                <img
+                  src={mukimPhoto}
+                  alt="Mukim Uddin"
+                  className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/50 to-transparent"></div>
               </div>
             </motion.div>
-          ))}
-        </div>
-      </motion.div>
 
-      {/* Work Experience */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="max-w-4xl mx-auto mb-20"
-      >
-        <h2 className="text-3xl font-bold mb-8 gradient-text">Work Experience</h2>
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.title}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-secondary/30 backdrop-blur-sm rounded-lg p-6"
-            >
-              <h3 className="text-xl font-bold text-accent mb-2">{exp.title}</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-text-primary font-medium">{exp.company}</span>
-                <span className="text-text-secondary">{exp.period}</span>
-              </div>
-              <p className="text-text-secondary mb-4">{exp.description}</p>
-              <ul className="list-disc list-inside space-y-2">
-                {exp.achievements.map((achievement, i) => (
-                  <li key={i} className="text-text-secondary">{achievement}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+            {/* Text Content */}
+            <div className="md:w-2/3 space-y-6 text-gray-400">
+              <p>
+                With over 5 years of experience in full-stack development, I specialize in building scalable web
+                applications using modern technologies. My passion lies in creating efficient, maintainable, and user-
+                friendly solutions that solve real-world problems.
+              </p>
+              <p>
+                I'm constantly learning and adapting to new technologies while maintaining a strong foundation in
+                software development principles. My approach combines technical expertise with creative problem-
+                solving to deliver exceptional results.
+              </p>
+            </div>
+          </div>
 
-      {/* Education */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="max-w-4xl mx-auto"
-      >
-        <h2 className="text-3xl font-bold mb-8 gradient-text">Education</h2>
-        <div className="space-y-6">
-          {education.map((edu, index) => (
-            <motion.div
-              key={edu.degree}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-secondary/30 backdrop-blur-sm rounded-lg p-6"
-            >
-              <h3 className="text-xl font-bold text-accent mb-2">{edu.degree}</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-text-primary font-medium">{edu.institution}</span>
-                <span className="text-text-secondary">{edu.period}</span>
-              </div>
-              <p className="text-text-secondary">{edu.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <h3 className="text-2xl font-bold mb-8 text-[#4EEEB1]">Technical Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {skills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-4"
+                >
+                  <skill.icon className="text-2xl text-[#4EEEB1]" />
+                  <div className="flex-1">
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-300">{skill.name}</span>
+                      <span className="text-[#4EEEB1]">{skill.proficiency}%</span>
+                    </div>
+                    <div className="h-2 bg-gray-800 rounded-full">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.proficiency}%` }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="h-full bg-[#4EEEB1] rounded-full"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
