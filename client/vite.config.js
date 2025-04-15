@@ -18,5 +18,10 @@ export default defineConfig({
     open: true,
     host: true,
   },
-  base: './'
+  base: '/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+  }
 })
